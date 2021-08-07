@@ -2,10 +2,9 @@ const express = require("express");
 const morgan = require('morgan');
 
 //routes
-
 const productRouter = require("./routes/productRoute");
-
 const userRouter = require("./routes/userRouter");
+
 
 //middlewares for accepting responses
 const app=express();
@@ -31,12 +30,11 @@ app.get('/',(req,res)=>{
 });
 
 //all route files
-
 app.use('/app/v1/products',productRouter);
-
-
-
 app.use('/app/v1/users',userRouter);
+
+
+
 
 
 module.exports = app;

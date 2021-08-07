@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+
 const dotEnv = require('dotenv');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -9,6 +9,7 @@ const app = require('./app');
 app.use(cors());
 
 // configure express to receive the form data
+const app = express();
 app.use(express.json());
 
 // configure dotEnv

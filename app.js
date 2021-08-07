@@ -7,6 +7,7 @@ const productRouter = require("./routes/productRoute");
 
 connst userRouter = require("./routes/userRouter");
 
+//middlewares for accepting responses
 const app=express();
 app.use(express.json());
 

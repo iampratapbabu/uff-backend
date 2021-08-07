@@ -8,9 +8,7 @@ const app = require('./app');
 // configure cors
 app.use(cors());
 
-// configure express to receive the form data
-const app = express();
-app.use(express.json());
+
 
 // configure dotEnv
 dotEnv.config({path : '.config/.env'});

@@ -10,5 +10,6 @@ router.route('/login')
   .post(userController.loginUser);
 router.route('/userinfo')
   .get(userController.getUser)
-
+router.route('/:email')
+  .get(userController.getSingleUser);
 module.exports = router;

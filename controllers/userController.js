@@ -110,7 +110,7 @@ exports.getUser = (authenticate , async (request , response) => {
     try {
         console.log(request.user);
         let user = await User.find();
-        response.status(200).json({user});
+        response.status(200).json({user: User.email});
     }
     catch (error) {
         console.error(error);
@@ -121,3 +121,17 @@ exports.getUser = (authenticate , async (request , response) => {
         });
     }
   });
+  exports.getSingleUser = (authenticate, async (request,response)=> {
+    try {
+        let user = await User.findOne({email: request.body.email});
+        response.status(200).json({user});
+    }
+    catch (error) {
+        console.error(error);
+        response.status(500).json({
+            errors : [
+                { msg : error.message }
+            ]
+        });
+    }
+});

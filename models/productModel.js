@@ -7,6 +7,7 @@ const productSchema = new mongoose.Schema(
         name: {
             type: String,
             trim: true,
+            unique:true,
             required: true,
             maxlength: 32
         },

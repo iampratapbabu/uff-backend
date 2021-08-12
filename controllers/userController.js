@@ -110,6 +110,7 @@ exports.getUser = (authenticate , async (request , response) => {
     try {
         console.log(request.user);
         let user = await User.find();
+
         response.status(200).json({user});
     }
     catch (error) {
@@ -120,4 +121,5 @@ exports.getUser = (authenticate , async (request , response) => {
             ]
         });
     }
-  });
+
+});

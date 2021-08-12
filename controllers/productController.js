@@ -10,8 +10,20 @@ exports.dummyMiddleware = (req,res,next) =>{
 //Getting all Products
 exports.getAllProducts = async(req,res) =>{
 	try{
-		const products = await Product.find();
+		//api features
+
+		//getting query
+		const queryObj = {...req.query};
+		let query  = Product.find(queryObj);
 		
+		
+		if(req.query.sort){
+			console.log(true);
+			query = Product.find().sort(req.query.sort);
+		}
+
+		//executing final query
+		const products = await query;
 		res.status(200).json({
 			"total-products":products.length,
 			products

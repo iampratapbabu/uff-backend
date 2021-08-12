@@ -11,8 +11,6 @@ router.route('/login')
 router.route('/userinfo')
   .get(userController.getUser)
 
-router.route('/:email')
-  .get(userController.getSingleUser);
 
 
 
